@@ -1,5 +1,7 @@
 package com.isetDSI1.backend_e_commerce.entities;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +23,9 @@ public class produit {
     private int qtEnStock;
     private  String image ;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    @JsonIgnoreProperties("produits")
     private categorie cat;
 
 }

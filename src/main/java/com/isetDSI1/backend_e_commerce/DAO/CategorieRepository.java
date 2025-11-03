@@ -1,12 +1,9 @@
 package com.isetDSI1.backend_e_commerce.DAO;
 
-
 import com.isetDSI1.backend_e_commerce.entities.categorie;
-import com.isetDSI1.backend_e_commerce.entities.produit;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+@Repository
 public interface CategorieRepository extends JpaRepository<categorie, Long> {
-
 }

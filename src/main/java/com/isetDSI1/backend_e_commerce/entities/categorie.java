@@ -1,5 +1,6 @@
 package com.isetDSI1.backend_e_commerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class categorie {
     private long id;
     private String libelle;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cat", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<produit> produits;
 }
